@@ -118,7 +118,8 @@ public class Tool {
                     // 打开权限
                     field.setAccessible(true);
                     //判断字段名类型进行赋值
-                    if ((i == 0 || i == 3 || i == 7)) {
+                    if (field.getGenericType().toString().equals(
+                                "class java.lang.Integer")) {
                         //为int
                         field.set(student, Integer.parseInt(list.get(i)));
                     } else {
