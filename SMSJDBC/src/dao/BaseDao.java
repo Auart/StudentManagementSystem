@@ -187,17 +187,18 @@ public abstract class BaseDao {
     }
 
     //释放资源 , 使用连接池无需释放资源(弃用)
+    @Deprecated
     public static void close(Connection conn, PreparedStatement ptmt, ResultSet rs) {
         close(conn, ptmt);
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
+         if(rs!=null){
+             try {
+                 rs.close();
+             } catch (SQLException e) {
+                 throw new RuntimeException(e);
+             }
+         }
     }
-
+    @Deprecated
     public static void close(Connection conn, PreparedStatement ptmt) {
         if (conn != null) {
             try {
@@ -215,5 +216,3 @@ public abstract class BaseDao {
         }
     }
 }
-
-
