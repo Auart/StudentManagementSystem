@@ -1,2 +1,2 @@
-# StudentSystemOfList
-This is my frist java project
+# StudentManagementSystem
+This is my frist java project and jdbc project
